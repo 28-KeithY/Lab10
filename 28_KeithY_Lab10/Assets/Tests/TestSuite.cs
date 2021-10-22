@@ -11,22 +11,6 @@ namespace Tests
         private float result = 0.0f;
 
         [Test]
-        public void TestAddition()
-        {
-            result = Calculator.CalculatePair(5, 2, "+");
-            Assert.AreEqual(result, 7);
-        }
-
-        [UnityTest]
-        public IEnumerator TestUnityAddition()
-        {
-            yield return null;
-
-            result = Calculator.CalculatePair(5, 2, "+");
-            Assert.AreEqual(result, 7);
-        }
-
-        [Test]
         public void TestSubtraction()
         {
             result = Calculator.CalculatePair(100, 90, "-");
@@ -77,8 +61,8 @@ namespace Tests
         [Test]
         public void TestSquareRoot()
         {
-            result = Calculator.CalculatePair(25, 5, "/");
-            Assert.AreEqual(result, 5);
+            result = Calculator.CalculatePair(3*4,3*4, "*");
+            Assert.AreEqual(result, 144);
         }
 
         [UnityTest]
@@ -86,8 +70,24 @@ namespace Tests
         {
             yield return null;
 
-            result = Calculator.CalculatePair(25, 5, "/");
-            Assert.AreEqual(result, 5);
+            result = Calculator.CalculatePair(3*4, 3*4, "*");
+            Assert.AreEqual(result, 144);
+        }
+
+        [Test]
+        public void TestPower()
+        {
+            result = Calculator.CalculatePair(5 * 5, 5, "*");
+            Assert.AreEqual(result, 125);
+        }
+
+        [UnityTest]
+        public IEnumerator TestUnityPower()
+        {
+            yield return null;
+
+            result = Calculator.CalculatePair(5 * 5, 5, "*");
+            Assert.AreEqual(result, 125);
         }
     }
 }
