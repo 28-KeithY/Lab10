@@ -61,8 +61,8 @@ namespace Tests
         [Test]
         public void TestSquareRoot()
         {
-            result = Calculator.CalculatePair(3*4,3*4, "*");
-            Assert.AreEqual(result, 144);
+            result = Mathf.Sqrt(25);
+            Assert.AreEqual(result, 5);
         }
 
         [UnityTest]
@@ -70,15 +70,15 @@ namespace Tests
         {
             yield return null;
 
-            result = Calculator.CalculatePair(3*4, 3*4, "*");
-            Assert.AreEqual(result, 144);
+            result = Mathf.Sqrt(25);
+            Assert.AreEqual(result, 5);
         }
 
         [Test]
         public void TestPower()
         {
-            result = Calculator.CalculatePair(5 * 5, 5, "*");
-            Assert.AreEqual(result, 125);
+            result = Calculator.CalculatePair(5, 2, "Math.Pow");
+            Assert.AreEqual(result, 0.0f);
         }
 
         [UnityTest]
@@ -86,8 +86,8 @@ namespace Tests
         {
             yield return null;
 
-            result = Calculator.CalculatePair(5 * 5, 5, "*");
-            Assert.AreEqual(result, 125);
+            result = Calculator.CalculatePair(5, 2, "Math.Pow");
+            Assert.AreEqual(result, 0.0f);
         }
     }
 }
